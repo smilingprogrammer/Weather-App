@@ -19,7 +19,7 @@ import org.json.JSONObject
 var weather_url1 = ""
 
 // api id for url
-var api_id1 = "030314b750cc43e7b39e503dfe37150c"
+var api_id1 = "549a4333059ff580877bfcd5377167b7"
 
 private lateinit var textView: TextView
 private lateinit var fusedLocationClient: FusedLocationProviderClient
@@ -58,7 +58,8 @@ class MainActivity : AppCompatActivity() {
             .addOnSuccessListener { location: Location? ->
                 // get the latitude and longitude
                 // and create the http URL
-                weather_url1 = "https://api.weatherbit.io/v2.0/current?" + "lat=" + location?.latitude + "&lon=" + location?.longitude + "&key=" + api_id1
+    /*            weather_url1 = "https://api.weatherbit.io/v2.0/current?" + "lat=" + location?.latitude + "&lon=" + location?.longitude + "&key=" + api_id1 */
+                weather_url1 = "https://api.openweathermap.org/data/2.5/onecall?lat=lat&lon={lon}&exclude={part}&appid={API key}"
                 Log.e("lat", weather_url1.toString())
                 // this function will
                 // fetch data from URL
