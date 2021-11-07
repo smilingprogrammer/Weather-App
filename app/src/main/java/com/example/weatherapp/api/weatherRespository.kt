@@ -11,7 +11,7 @@ import javax.inject.Inject
 class weatherRespository @Inject constructor(private val apiServiceImp: ApiServiceImp) {
 
     fun getCityData(city: String) : Flow<City> = flow {
-        val response = apiServiceImp.getCityData(city, "")
+        val response = apiServiceImp.getCityData(city, "549a4333059ff580877bfcd5377167b7")
         emit(response)
     }.flowOn(Dispatchers.IO)
         .conflate()
