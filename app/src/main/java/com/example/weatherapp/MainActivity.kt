@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         initListener()
         viewModel.weatherResponse.observe(this, Observer { response ->
 
-            if (response.weather[0].description == "clear sky" || response.weather[0].description == "mist'") {
+            if (response.weather[0].description == "clear sky" || response.weather[0].description == "mist") {
                 Glide.with(this)
                     .load(R.drawable.clouds)
                     .into(binding.image)
